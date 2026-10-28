@@ -1,7 +1,7 @@
 
 {
-  "name": "Student Information Management System",
-  "short_name": "Student Info",
+ "name": "Student Information Management System",
+ "short_name": "Student Info",
   "description": "Manage student information easily",
   "start_url": "/login",
   "scope": "/",
