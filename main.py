@@ -189,6 +189,20 @@ def home():
 
     <body>
       
+<link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+<meta name="theme-color" content="#0a3d62">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Student Info">
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/static/service-worker.js")
+        .catch((error) => console.error("Service worker registration failed:", error));
+    });
+  }
+</script>
+
 <header>
     <div class="brand">
       <img src="{{ url_for('static', filename='logo.png') }}"
