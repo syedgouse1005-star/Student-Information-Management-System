@@ -1,0 +1,7 @@
+
+__pycache__/
+*.py[cod]
+students.db
+*.db
+.env
+main_backup.py
