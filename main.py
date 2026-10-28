@@ -70,6 +70,7 @@ def home():
     return render_template_string("""
     <!doctype html>
     <html lang="en">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='icons/icon-192.png') }}">
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -174,16 +175,79 @@ def home():
           overflow-x: auto;
         }
 
-        @media(max-width: 600px) {
-          header {
-            gap: 10px;
-          }
+        
+@media (max-width: 600px) {
+  header {
+    gap: 12px;
+    padding: 16px;
+  }
 
-          th, td {
-            padding: 7px;
-            font-size: 13px;
-          }
-        }
+  header .dashboard-logo {
+    width: 70px !important;
+    height: 70px !important;
+    max-width: 70px !important;
+    max-height: 70px !important;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  main {
+    width: auto;
+    margin: 16px auto;
+    padding: 0 12px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card,
+  .panel {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .number {
+    font-size: 23px;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 6px 0;
+    font-size: 16px;
+  }
+
+  button,
+  .btn {
+    padding: 11px 14px;
+    margin: 3px 2px;
+  }
+
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 600px;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
       </style>
     </head>
 
